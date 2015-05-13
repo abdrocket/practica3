@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE eurovision SYSTEM "eurovision.dtd">
+<eurovision>
+	<artista cod-artista = "a0001">
+		<nombre text = "Rodolfo Chikilicuatre"/>
+		<descripcion text = "Freak"/>
+	</artista>
+	<artista cod-artista = "a0002">
+		<nombre text = "Tipo random de Finlandia"/>
+		<descripcion text = "Freak satanico del norte"/>
+	</artista>
+	<artista cod-artista = "a0003">
+		<nombre text = "Bertin Osborne"/>
+		<descripcion text = "Latin lover"/>
+	</artista>
+	<artista cod-artista = "a0004">
+		<nombre text = "Peter Pan"/>
+		<descripcion text = "No quiere crecer"/>
+	</artista>
+	<artista cod-artista = "a0005">
+		<nombre text = "Princesa Chicle"/>
+		<descripcion text = "Muy dulce"/>
+	</artista>
+	<artista cod-artista = "a0006">
+		<nombre text = "Rey Hielo"/>
+		<descripcion text = "No quiere crecer"/>
+	</artista>
+	<artista cod-artista = "a0007">
+		<nombre text = "Princesa bultos"/>
+		<descripcion text = "Que te bulten!"/>
+	</artista>
+	<artista cod-artista = "a0008">
+		<nombre text = "Princesa Llama"/>
+		<descripcion text = "Paaaaaaaso, que voy ardiendoooo"/>
+	</artista>
+	<artista cod-artista = "a0009">
+		<nombre text = "Asuranceturix"/>
+		<descripcion text = "Voz de ruiseñor"/>
+	</artista>
+	<artista cod-artista = "a0010">
+		<nombre text = "El Sevilla"/>
+		<descripcion text = "Voz de ruiseñor"/>
+	</artista>
+	<edicion>
+		<anno text = "2008"/>
+		<ciudad text = "Belgrado"/>
+		<pais text = "Servia"/>
+		<interpretes-paises>
+			<interprete-pais artista = "a0001" pais = "Spain" cancion = "Baila el Chiki-Chiki" orden = "1">
+				<voto receptor = "" nota = ""/>
+				<voto receptor = "" nota = ""/>
+			</interprete-pais>
+			<interprete-pais artista = "a0002" pais = "Finlandia" cancion = "Satan Satan Satan" orden = "3">
+				<voto receptor = "" nota = ""/>
+				<voto receptor = "" nota = ""/>
+			</interprete-pais>
+			<interprete-pais artista = "a0003" pais = "Navidul" cancion = "Baladas baladeras" orden = "2">
+				<voto receptor = "" nota = ""/>
+				<voto receptor = "" nota = ""/>
+			</interprete-pais>
+			<interprete-pais artista = "a0004" pais = "Nunca Jamás" cancion = "Los ninios perdidos" orden = "4">
+				<voto receptor = "" nota = ""/>
+				<voto receptor = "" nota = ""/>
+			</interprete-pais>
+			<interprete-pais artista = "a0009" pais="Galia" cancion="Rock del Menhir" orden="5">
+				<voto receptor="" nota=""/>
+				<voto receptor="" nota=""/>
+			</interprete-pais>
+		</interpretes-paises>
+	</edicion>
+	<edicion>
+		<anno text="2016"/>
+		<ciudad text="Ciudad de los Ladrones"/>
+		<pais text="Reino de O"/>
+		<interpretes-paises>
+			<interprete-pais artista = "a0005" pais="Chuchelandia" cancion="Baila el Chiki-Chiki" orden="3">
+				<voto receptor="" nota=""/>
+				<voto receptor="" nota=""/>
+			</interprete-pais>
+			<interprete-pais artista = "a0006" pais="Reino de Hielo" cancion="Satan Satan Satan" orden="2">
+				<voto receptor="" nota=""/>
+				<voto receptor="" nota=""/>
+			</interprete-pais>
+			<interprete-pais artista = "a0007" pais="Espacio Bultos" cancion="Baladas baladeras" orden="4">
+				<voto receptor="" nota=""/>
+				<voto receptor="" nota=""/>
+			</interprete-pais>
+			<interprete-pais artista = "a0008" pais="Reino de fuego" cancion="Los ninios perdidos" orden="1">
+				<voto receptor="" nota=""/>
+				<voto receptor="" nota=""/>
+			</interprete-pais>
+			<interprete-pais artista = "a0010" pais="Spain" cancion="El hombre que era viejo y verde a la ve" orden="5">
+				<voto receptor="" nota=""/>
+				<voto receptor="" nota=""/>
+			</interprete-pais>
+		</interpretes-paises>
+	</edicion>
+</eurovision>
