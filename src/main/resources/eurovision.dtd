@@ -2,7 +2,7 @@
 <!ELEMENT artista (nombre, descripcion?, url-img?)>
 <!ELEMENT nombre EMPTY>
 <!ELEMENT descripcion EMPTY>
-<!ELEMENT url-img (#PCDATA)>
+<!ELEMENT url-img EMPTY>
 <!ELEMENT edicion (anno, ciudad, pais, interpretes-paises)>
 <!ELEMENT anno EMPTY>
 <!ELEMENT ciudad EMPTY>
@@ -22,3 +22,4 @@
 <!ATTLIST interprete-pais orden CDATA #REQUIRED>
 <!ATTLIST voto emisor CDATA #REQUIRED>
 <!ATTLIST voto nota CDATA #REQUIRED>
+<!ATTLIST url-img src CDATA "">

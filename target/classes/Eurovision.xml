@@ -48,26 +48,23 @@
 		<interpretes-paises>
 			<interprete-pais artista = "a0001" pais = "Spain" cancion = "Baila el Chiki-Chiki" orden = "1">
 				<voto emisor = "Nunca Jamas" nota = "9"/>
-				<voto emisor = "Galia" nota = "9"/>
-				<voto emisor = "Finlandia" nota = "6"/>
+				<voto emisor = "Galia" nota = "10"/>
 			</interprete-pais>
 			<interprete-pais artista = "a0002" pais = "Finlandia" cancion = "Satan Satan Satan" orden = "3">
 				<voto emisor = "Galia" nota = "7"/>
-				<voto emisor = "Nunca Jamas" nota = "8"/>
 				<voto emisor = "Spain" nota = "1"/>
 			</interprete-pais>
 			<interprete-pais artista = "a0003" pais = "Navidul" cancion = "Baladas baladeras" orden = "2">
-				<voto emisor = "Finlandia" nota = "2"/>
+				<voto emisor = "Finlandia" nota = "6"/>
 				<voto emisor = "Spain" nota = "3"/>
-				<voto emisor = "Galia" nota = "10"/>
 			</interprete-pais>
 			<interprete-pais artista = "a0004" pais = "Nunca Jamas" cancion = "Los ninios perdidos" orden = "4">
 				<voto emisor = "Navidul" nota = "1"/>
-				<voto emisor = "Spain" nota = "4"/>
+				<voto emisor = "Spain" nota = "3"/>
 			</interprete-pais>
 			<interprete-pais artista = "a0009" pais="Galia" cancion="Rock del Menhir" orden="5">
-				<voto emisor="Navidul" nota="2"/>
-				<voto emisor="Spain" nota="5"/>
+				<voto emisor="Navidul" nota="1"/>
+				<voto emisor="Spain" nota="3"/>
 			</interprete-pais>
 		</interpretes-paises>
 	</edicion>
@@ -76,14 +73,13 @@
 		<ciudad text="Ciudad de los Ladrones"/>
 		<pais text="Reino de O"/>
 		<interpretes-paises>
-			<interprete-pais artista = "a0005" pais="Chuchelandia" cancion="I love candy" orden="3">
+			<interprete-pais artista = "a0005" pais="Chuchelandia" cancion="Baila el Chiki-Chiki" orden="3">
 				<voto emisor="Reino de Fuego" nota="8"/>
-				<voto emisor="Spain" nota="9"/>
+				<voto emisor="Spain" nota="2"/>
 			</interprete-pais>
-			<interprete-pais artista = "a0006" pais="Reino de Hielo" cancion="Oh, Gunter!" orden="2">
+			<interprete-pais artista = "a0006" pais="Reino de Hielo" cancion="Satan Satan Satan" orden="2">
 				<voto emisor="Reino de Fuego" nota="1"/>
 				<voto emisor="Chuchelandia" nota="9"/>
-				<voto emisor="Spain" nota="2"/>
 			</interprete-pais>
 			<interprete-pais artista = "a0007" pais="Espacio Bultos" cancion="Baladas baladeras" orden="4">
 				<voto emisor="Chuchelandia" nota="6"/>
@@ -94,9 +90,8 @@
 				<voto emisor="Espacio Bultos" nota="2"/>
 			</interprete-pais>
 			<interprete-pais artista = "a0010" pais="Spain" cancion="El hombre que era viejo y verde a la ve" orden="5">
-				<voto emisor="Chuchelandia" nota="8"/>
+				<voto emisor="Chuchelandia" nota="9"/>
 				<voto emisor="Reino de Hielo" nota="6"/>
-				<voto emisor="Espacio Bultos" nota="3"/>
 			</interprete-pais>
 		</interpretes-paises>
 	</edicion>
