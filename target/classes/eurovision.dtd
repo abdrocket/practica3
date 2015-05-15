@@ -20,5 +20,5 @@
 <!ATTLIST interprete-pais pais CDATA #REQUIRED>
 <!ATTLIST interprete-pais cancion CDATA #REQUIRED>
 <!ATTLIST interprete-pais orden CDATA #REQUIRED>
-<!ATTLIST voto receptor CDATA #REQUIRED>
+<!ATTLIST voto emisor CDATA #REQUIRED>
 <!ATTLIST voto nota CDATA #REQUIRED>
