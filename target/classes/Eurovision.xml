@@ -1,50 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE eurovision SYSTEM "eurovision.dtd">
 <eurovision>
-	<artista cod-artista = "a0001">
-		<nombre text = "Rodolfo Chikilicuatre"/>
-		<descripcion text = "Freak"/>
-	</artista>
-	<artista cod-artista = "a0002">
-		<nombre text = "Tipo random de Finlandia"/>
-		<descripcion text = "Freak satanico del norte"/>
-	</artista>
-	<artista cod-artista = "a0003">
-		<nombre text = "Bertin Osborne"/>
-		<descripcion text = "Latin lover"/>
-	</artista>
-	<artista cod-artista = "a0004">
-		<nombre text = "Peter Pan"/>
-		<descripcion text = "No quiere crecer"/>
-	</artista>
-	<artista cod-artista = "a0005">
-		<nombre text = "Princesa Chicle"/>
-		<descripcion text = "Muy dulce"/>
-	</artista>
-	<artista cod-artista = "a0006">
-		<nombre text = "Rey Hielo"/>
-		<descripcion text = "No quiere crecer"/>
-	</artista>
-	<artista cod-artista = "a0007">
-		<nombre text = "Princesa bultos"/>
-		<descripcion text = "Que te bulten!"/>
-	</artista>
-	<artista cod-artista = "a0008">
-		<nombre text = "Princesa Llama"/>
-		<descripcion text = "Paaaaaaaso, que voy ardiendoooo"/>
-	</artista>
-	<artista cod-artista = "a0009">
-		<nombre text = "Asuranceturix"/>
-		<descripcion text = "Voz de ruiseñor"/>
-	</artista>
-	<artista cod-artista = "a0010">
-		<nombre text = "El Sevilla"/>
-		<descripcion text = "Voz de ruiseñor"/>
-	</artista>
-	<edicion>
-		<anno text = "2008"/>
-		<ciudad text = "Belgrado"/>
-		<pais text = "Servia"/>
+	<artista cod-artista = "a0001" nombre = "Rodolfo Chikilicuatre" descripcion = "Freak" url-img = "/home/"/>
+	<artista cod-artista = "a0002" nombre = "Tipo random de Finlandia" descripcion = "Freak satanico del norte"/>
+	<artista cod-artista = "a0003" nombre = "Bertin Osborne" descripcion = "Latin lover"/>
+	<artista cod-artista = "a0004" nombre = "Peter Pan" descripcion = "No quiere crecer"/>
+	<artista cod-artista = "a0005" nombre = "Princesa Chicle" descripcion  = "Muy dulce"/>
+	<artista cod-artista = "a0006" nombre = "Rey Hielo" descripcion = "No quiere crecer"/>
+	<artista cod-artista = "a0007" nombre = "Princesa bultos" descripcion = "Que te bulten!"/>
+	<artista cod-artista = "a0008" nombre = "Princesa Llama" descripcion = "Paaaaaaaso, que voy ardiendoooo"/>
+	<artista cod-artista = "a0009" nombre = "Asuranceturix" descripcion = "Voz de ruiseñor"/>
+	<artista cod-artista = "a0010" nombre = "El Sevilla" descripcion = "Voz de ruiseñor"/>
+
+	<edicion anno = "2008" ciudad = "Belgrado" pais = "Servia">
 		<interpretes-paises>
 			<interprete-pais artista = "a0001" pais = "Spain" cancion = "Baila el Chiki-Chiki" orden = "1">
 				<voto emisor = "Nunca Jamas" nota = "9"/>
@@ -68,10 +36,7 @@
 			</interprete-pais>
 		</interpretes-paises>
 	</edicion>
-	<edicion>
-		<anno text="2016"/>
-		<ciudad text="Ciudad de los Ladrones"/>
-		<pais text="Reino de O"/>
+	<edicion anno = "2016" ciudad = "Ciudad de los Ladrones" pais = "Reino de O">
 		<interpretes-paises>
 			<interprete-pais artista = "a0005" pais="Chuchelandia" cancion="Baila el Chiki-Chiki" orden="3">
 				<voto emisor="Reino de Fuego" nota="8"/>
