@@ -1,63 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE eurovision SYSTEM "eurovision.dtd">
 <eurovision>
-	<artista cod-artista = "a0001" nombre = "Rodolfo Chikilicuatre" descripcion = "Freak" url-img = "/home/"/>
-	<artista cod-artista = "a0002" nombre = "Tipo random de Finlandia" descripcion = "Freak satanico del norte"/>
-	<artista cod-artista = "a0003" nombre = "Bertin Osborne" descripcion = "Latin lover"/>
-	<artista cod-artista = "a0004" nombre = "Peter Pan" descripcion = "No quiere crecer"/>
-	<artista cod-artista = "a0005" nombre = "Princesa Chicle" descripcion  = "Muy dulce"/>
-	<artista cod-artista = "a0006" nombre = "Rey Hielo" descripcion = "No quiere crecer"/>
-	<artista cod-artista = "a0007" nombre = "Princesa bultos" descripcion = "Que te bulten!"/>
-	<artista cod-artista = "a0008" nombre = "Princesa Llama" descripcion = "Paaaaaaaso, que voy ardiendoooo"/>
-	<artista cod-artista = "a0009" nombre = "Asuranceturix" descripcion = "Voz de ruiseñor"/>
-	<artista cod-artista = "a0010" nombre = "El Sevilla" descripcion = "Voz de ruiseñor"/>
-
-	<edicion anno = "2008" ciudad = "Belgrado" pais = "Servia">
-		<interpretes-paises>
-			<interprete-pais artista = "a0001" pais = "Spain" cancion = "Baila el Chiki-Chiki" orden = "1">
-				<voto emisor = "Nunca Jamas" nota = "9"/>
-				<voto emisor = "Galia" nota = "10"/>
-			</interprete-pais>
-			<interprete-pais artista = "a0002" pais = "Finlandia" cancion = "Satan Satan Satan" orden = "3">
-				<voto emisor = "Galia" nota = "7"/>
-				<voto emisor = "Spain" nota = "1"/>
-			</interprete-pais>
-			<interprete-pais artista = "a0003" pais = "Navidul" cancion = "Baladas baladeras" orden = "2">
-				<voto emisor = "Finlandia" nota = "6"/>
-				<voto emisor = "Spain" nota = "3"/>
-			</interprete-pais>
-			<interprete-pais artista = "a0004" pais = "Nunca Jamas" cancion = "Los ninios perdidos" orden = "4">
-				<voto emisor = "Navidul" nota = "1"/>
-				<voto emisor = "Spain" nota = "3"/>
-			</interprete-pais>
-			<interprete-pais artista = "a0009" pais="Galia" cancion="Rock del Menhir" orden="5">
-				<voto emisor="Navidul" nota="1"/>
-				<voto emisor="Spain" nota="3"/>
-			</interprete-pais>
-		</interpretes-paises>
-	</edicion>
-	<edicion anno = "2016" ciudad = "Ciudad de los Ladrones" pais = "Reino de O">
-		<interpretes-paises>
-			<interprete-pais artista = "a0005" pais="Chuchelandia" cancion="Baila el Chiki-Chiki" orden="3">
-				<voto emisor="Reino de Fuego" nota="8"/>
-				<voto emisor="Spain" nota="2"/>
-			</interprete-pais>
-			<interprete-pais artista = "a0006" pais="Reino de Hielo" cancion="Satan Satan Satan" orden="2">
-				<voto emisor="Reino de Fuego" nota="1"/>
-				<voto emisor="Chuchelandia" nota="9"/>
-			</interprete-pais>
-			<interprete-pais artista = "a0007" pais="Espacio Bultos" cancion="Baladas baladeras" orden="4">
-				<voto emisor="Chuchelandia" nota="6"/>
-				<voto emisor="Spain" nota="3"/>
-			</interprete-pais>
-			<interprete-pais artista = "a0008" pais="Reino de Fuego" cancion="Los ninios perdidos" orden="1">
-				<voto emisor="Reino de Hielo" nota="1"/>
-				<voto emisor="Espacio Bultos" nota="2"/>
-			</interprete-pais>
-			<interprete-pais artista = "a0010" pais="Spain" cancion="El hombre que era viejo y verde a la ve" orden="5">
-				<voto emisor="Chuchelandia" nota="9"/>
-				<voto emisor="Reino de Hielo" nota="6"/>
-			</interprete-pais>
-		</interpretes-paises>
-	</edicion>
+    <artista cod-artista="a0001" nombre="Rodolfo Chikilicuatre" descripcion="Freak" url-img="/home/"/>
+    <artista cod-artista="a0002" nombre="Tipo random de Finlandia" descripcion="Freak satanico del norte" url-img=""/>
+    <artista cod-artista="a0003" nombre="Bertin Osborne" descripcion="Latin lover"/>
+    <artista cod-artista="a0004" nombre="Peter Pan" descripcion="No quiere crecer"/>
+    <artista cod-artista="a0005" nombre="Princesa Chicle" descripcion="Muy dulce"/>
+    <artista cod-artista="a0006" nombre="Rey Hielo" descripcion="No quiere crecer"/>
+    <artista cod-artista="a0007" nombre="Princesa bultos" descripcion="Que te bulten!"/>
+    <artista cod-artista="a0008" nombre="Princesa Llama" descripcion="Paaaaaaaso, que voy ardiendoooo"/>
+    <artista cod-artista="a0009" nombre="Asuranceturix" descripcion="Voz de ruiseñor"/>
+    <artista cod-artista="a0010" nombre="El Sevilla"/>
+    <edicion anno="2008" ciudad="Belgrado" pais="Servia">
+        <interpretes-paises>
+            <interprete-pais artista="a0001" pais="Spain" cancion="Baila el Chiki-Chiki" orden="1">
+                <voto emisor="Nunca Jamas" nota="9"/>
+                <voto emisor="Galia" nota="10"/>
+            </interprete-pais>
+            <interprete-pais artista="a0002" pais="Finlandia" cancion="Satan Satan Satan" orden="3">
+                <voto emisor="Galia" nota="7"/>
+                <voto emisor="Spain" nota="1"/>
+            </interprete-pais>
+            <interprete-pais artista="a0003" pais="Navidul" cancion="Baladas baladeras" orden="2">
+                <voto emisor="Finlandia" nota="6"/>
+                <voto emisor="Spain" nota="3"/>
+            </interprete-pais>
+            <interprete-pais artista="a0004" pais="Nunca Jamas" cancion="Los ninios perdidos" orden="4">
+                <voto emisor="Navidul" nota="1"/>
+                <voto emisor="Spain" nota="3"/>
+            </interprete-pais>
+            <interprete-pais artista="a0009" pais="Galia" cancion="Rock del Menhir" orden="5">
+                <voto emisor="Navidul" nota="1"/>
+                <voto emisor="Spain" nota="3"/>
+            </interprete-pais>
+        </interpretes-paises>
+    </edicion>
+    <edicion anno="2016" ciudad="Ciudad de los Ladrones" pais="Reino de O">
+        <interpretes-paises>
+            <interprete-pais artista="a0005" pais="Chuchelandia" cancion="I want candy" orden="3">
+                <voto emisor="Reino de Fuego" nota="8"/>
+                <voto emisor="Spain" nota="2"/>
+            </interprete-pais>
+            <interprete-pais artista="a0006" pais="Reino de Hielo" cancion="Satan Satan Satan" orden="2">
+                <voto emisor="Reino de Fuego" nota="1"/>
+                <voto emisor="Chuchelandia" nota="9"/>
+            </interprete-pais>
+            <interprete-pais artista="a0007" pais="Espacio Bultos" cancion="Baladas baladeras" orden="4">
+                <voto emisor="Chuchelandia" nota="6"/>
+                <voto emisor="Spain" nota="3"/>
+            </interprete-pais>
+            <interprete-pais artista="a0008" pais="Reino de Fuego" cancion="Los ninios perdidos" orden="1">
+                <voto emisor="Reino de Hielo" nota="1"/>
+                <voto emisor="Espacio Bultos" nota="2"/>
+            </interprete-pais>
+            <interprete-pais artista="a0010" pais="Spain" cancion="El hombre que era viejo y verde a la ve" orden="5">
+                <voto emisor="Chuchelandia" nota="9"/>
+                <voto emisor="Reino de Hielo" nota="6"/>
+            </interprete-pais>
+        </interpretes-paises>
+    </edicion>
 </eurovision>
