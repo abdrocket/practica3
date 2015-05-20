@@ -1,5 +1,5 @@
 xquery version "3.0";
-declare variable $anyo as xs:integer := 2016;
+declare variable $anyo as xs:integer external;
 
 let $ed := doc("Eurovision.xml")/eurovision/edicion[data(@anno) = $anyo]
 return  <body>
