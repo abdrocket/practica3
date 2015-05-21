@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 import javax.xml.namespace.QName;
@@ -138,7 +139,11 @@ public class DataAccessor {
 			Element e;
 			int i = 1;
 			while (rs.next()) {
-				rs.writeSequence(System.out, null);
+				OutputStream os = null;
+				rs.writeSequence(os, null);
+				String s = new String(os.toByteArray(), "UTF-8");
+				
+				System.out.println(s);
 			}
 		} catch (XQException e) {
 			// TODO Auto-generated catch block

@@ -8,7 +8,7 @@ return  <body>
         for $interpretacion in $ed//interprete-pais
         let $artista := doc("Eurovision.xml")/eurovision/artista[data(@cod-artista) = data($interpretacion/@artista)]
         return <li>
-                <p> {concat(data($interpretacion/@pais), " - ", data($artista/@nombre) , " - ",'<i> ', data($interpretacion/@cancion), " </i>")}</p>
+                <p> {concat(data($interpretacion/@pais), " - ", data($artista/@nombre) , " - ","<i>", data($interpretacion/@cancion), "</i>")}</p>
                 { if(data($artista/@descripcion)!="") then ( <p> { data($artista/@descripcion)}</p> ) else() }
                 { if(data($artista/@url-img)!="") then (<img src="{data($artista/@url-img)}"/>) else() }
                 <p><b>Recibió votos de: </b> {fn:string-join(for $pais in $interpretacion/voto/@emisor return data($pais), ", ")} </p>
