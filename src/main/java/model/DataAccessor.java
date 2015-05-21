@@ -37,15 +37,16 @@ public class DataAccessor {
 
 	}
 
-	public ArrayList<String> XQuery1() {
-		ArrayList<String> l = new ArrayList<String>();
+	public ArrayList<Integer> XQuery1() {
+		ArrayList<Integer> l = new ArrayList<Integer>();
 		XQConnection con = null;
 		XQResultSequence rs = null;
 		XQExpression pe = null;
+		BufferedReader br = null;
 		try {
 			File f = new File("src/main/resources/Eurovision1.xquery");
 			FileReader fr = new FileReader(f);
-			BufferedReader br = new BufferedReader(fr);
+			br = new BufferedReader(fr);
 			br.readLine();
 			String path = br.readLine();
 			
@@ -53,7 +54,7 @@ public class DataAccessor {
 			pe = con.createExpression();
 			rs = pe.executeQuery(path);
 			while (rs.next()) {
-				l.add(rs.getItemAsString(null));
+				l.add(Integer.parseInt(rs.getItemAsString(null)));
 			}
 		} catch (XQException | IOException e) {
 			// TODO Auto-generated catch block
@@ -69,7 +70,9 @@ public class DataAccessor {
 				if(con != null){
 					con.close();
 				}
-			}catch(XQException e){}
+				if(br != null)
+					br.close();
+			}catch(XQException | IOException e){}
 		}
 		return l;
 	}
@@ -120,10 +123,10 @@ public class DataAccessor {
 		return l;
 	}
 
-	public ArrayList<String[]> XQuery3(int anno) {
-		ArrayList<String[]> l = new ArrayList<String[]>();
+	public String XQuery3(int anno) {
+		//ArrayList<String[]> l = new ArrayList<String[]>();
 		String source = new String("/Eurovision3.xquery");
-		
+		String result = "";
 		InputStream is = this.getClass().getResourceAsStream(source);
 
 		XQConnection con = null;
@@ -134,14 +137,12 @@ public class DataAccessor {
 			pe = con.prepareExpression(is);
 			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
-			
-			Element e;
-			int i = 1;
+		
 			while (rs.next()) {
-				rs.writeSequence(System.out, null);
+				//rs.writeSequence(System.out, null);
+				result += rs.getItemAsString(null);
 			}
 		} catch (XQException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try{
@@ -156,7 +157,7 @@ public class DataAccessor {
 				}
 			}catch(XQException e){}
 		}
-		return l;
+		return result;
 	}
 	
 
