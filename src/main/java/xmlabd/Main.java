@@ -1,17 +1,16 @@
 package xmlabd;
 
-import java.util.ArrayList;
 
-import model.Clasificacion;
+import view.MainWindow;
 import model.DataAccessor;
 
 public class Main {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		DataAccessor da = new DataAccessor();
-		//System.out.println();
-		da.XQuery3(2008);
+		MainWindow m = new MainWindow(da);
+		//da.XQuery3(2008);
 	}
 
 }
