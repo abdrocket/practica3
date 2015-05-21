@@ -37,8 +37,8 @@ public class DataAccessor {
 
 	}
 
-	public ArrayList<Integer> query1() {
-		ArrayList<Integer> l = new ArrayList<Integer>();
+	public ArrayList<String> XQuery1() {
+		ArrayList<String> l = new ArrayList<String>();
 		XQConnection con = null;
 		XQResultSequence rs = null;
 		XQExpression pe = null;
@@ -53,7 +53,7 @@ public class DataAccessor {
 			pe = con.createExpression();
 			rs = pe.executeQuery(path);
 			while (rs.next()) {
-				l.add(Integer.parseInt(rs.getItemAsString(null)));
+				l.add(rs.getItemAsString(null));
 			}
 		} catch (XQException | IOException e) {
 			// TODO Auto-generated catch block
@@ -74,14 +74,12 @@ public class DataAccessor {
 		return l;
 	}
 
-	public ArrayList<String[]> query2(int anno) {
-		ArrayList<String[]> l = new ArrayList<String[]>();
+	public ArrayList<Clasificacion> XQuery2(int anno) {
+		ArrayList<Clasificacion> l = new ArrayList<Clasificacion>();
 		String source = new String("/Eurovision2.xquery");
 		
 		InputStream is = this.getClass().getResourceAsStream(source);
-		//System.out.println(is);
-		
-		
+
 		XQConnection con = null;
 		XQResultSequence rs = null;
 		XQPreparedExpression pe = null;
@@ -90,12 +88,17 @@ public class DataAccessor {
 			pe = con.prepareExpression(is);
 			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
+			
+			/* metodo caÑero que nos devuelve el html como cuando ejecutamos estas mismas 
+			 * xquerys en eXide */
+			//rs.writeSequence(System.out, null);
+			
 			Element e;
 			int i = 1;
 			while (rs.next()) {
 				e = (Element) rs.getObject();
-				String[] s = {String.valueOf(i) , e.getAttribute("pais"),e.getAttribute("cancion"),e.getAttribute("artista"),e.getAttribute("puntos")};
-				l.add(s);
+				Clasificacion c = new Clasificacion(i, e.getAttribute("pais"), e.getAttribute("cancion"), e.getAttribute("artista"), Integer.parseInt(e.getAttribute("puntos").trim()) );
+				l.add(c);
 				i++;
 			}
 		} catch (XQException e) {
@@ -117,27 +120,25 @@ public class DataAccessor {
 		return l;
 	}
 
-	public ArrayList<Element> query3(int anno) {
-		ArrayList<Element> l = new ArrayList<Element>();
+	public ArrayList<String[]> XQuery3(int anno) {
+		ArrayList<String[]> l = new ArrayList<String[]>();
 		String source = new String("/Eurovision3.xquery");
 		
 		InputStream is = this.getClass().getResourceAsStream(source);
-		//System.out.println(is);
-		
-		
+
 		XQConnection con = null;
-		XQResultSequence rs = null;
 		XQPreparedExpression pe = null;
+		XQResultSequence rs = null;
 		try {
 			con = this.xqs.getConnection();
 			pe = con.prepareExpression(is);
 			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
+			
 			Element e;
 			int i = 1;
 			while (rs.next()) {
-				e = (Element) rs.getObject();
-				l.add(e);
+				rs.writeSequence(System.out, null);
 			}
 		} catch (XQException e) {
 			// TODO Auto-generated catch block
