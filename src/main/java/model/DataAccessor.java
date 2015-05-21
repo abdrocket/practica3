@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.StreamTokenizer;
 import java.util.ArrayList;
 
 import javax.xml.namespace.QName;
@@ -50,7 +52,7 @@ public class DataAccessor {
 			br = new BufferedReader(fr);
 			br.readLine();
 			String path = br.readLine();
-			
+
 			con = this.xqs.getConnection();
 			pe = con.createExpression();
 			rs = pe.executeQuery(path);
@@ -61,19 +63,20 @@ public class DataAccessor {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			try{
-				if(rs != null){
+			try {
+				if (rs != null) {
 					rs.close();
 				}
-				if(pe != null){
-					pe.close();			
+				if (pe != null) {
+					pe.close();
 				}
-				if(con != null){
+				if (con != null) {
 					con.close();
 				}
-				if(br != null)
+				if (br != null)
 					br.close();
-			}catch(XQException | IOException e){}
+			} catch (XQException | IOException e) {
+			}
 		}
 		return l;
 	}
@@ -81,7 +84,7 @@ public class DataAccessor {
 	public ArrayList<Clasificacion> XQuery2(int anno) {
 		ArrayList<Clasificacion> l = new ArrayList<Clasificacion>();
 		String source = new String("/Eurovision2.xquery");
-		
+
 		InputStream is = this.getClass().getResourceAsStream(source);
 
 		XQConnection con = null;
@@ -92,16 +95,20 @@ public class DataAccessor {
 			pe = con.prepareExpression(is);
 			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
-			
-			/* metodo caÑero que nos devuelve el html como cuando ejecutamos estas mismas 
-			 * xquerys en eXide */
-			//rs.writeSequence(System.out, null);
-			
+
+			/*
+			 * metodo caÑero que nos devuelve el html como cuando ejecutamos
+			 * estas mismas xquerys en eXide
+			 */
+			// rs.writeSequence(System.out, null);
+
 			Element e;
 			int i = 1;
 			while (rs.next()) {
 				e = (Element) rs.getObject();
-				Clasificacion c = new Clasificacion(i, e.getAttribute("pais"), e.getAttribute("cancion"), e.getAttribute("artista"), Integer.parseInt(e.getAttribute("puntos").trim()) );
+				Clasificacion c = new Clasificacion(i, e.getAttribute("pais"),
+						e.getAttribute("cancion"), e.getAttribute("artista"),
+						Integer.parseInt(e.getAttribute("puntos").trim()));
 				l.add(c);
 				i++;
 			}
@@ -109,23 +116,24 @@ public class DataAccessor {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			try{
-				if(rs != null){
+			try {
+				if (rs != null) {
 					rs.close();
 				}
-				if(pe != null){
-					pe.close();			
+				if (pe != null) {
+					pe.close();
 				}
-				if(con != null){
+				if (con != null) {
 					con.close();
 				}
-			}catch(XQException e){}
+			} catch (XQException e) {
+			}
 		}
 		return l;
 	}
 
 	public String XQuery3(int anno) {
-		//ArrayList<String[]> l = new ArrayList<String[]>();
+		// ArrayList<String[]> l = new ArrayList<String[]>();
 		String source = new String("/Eurovision3.xquery");
 		String result = "";
 		InputStream is = this.getClass().getResourceAsStream(source);
@@ -138,33 +146,31 @@ public class DataAccessor {
 			pe = con.prepareExpression(is);
 			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
-		
+
 			while (rs.next()) {
 				OutputStream os = null;
-				rs.writeSequence(os, null);
-				String s = new String(os.toByteArray(), "UTF-8");
+				String s;
+				rs.writeSequence(System.out, null);
+
 				
-				System.out.println(s);
-				//rs.writeSequence(System.out, null);
-				result += rs.getItemAsString(null);
 			}
 		} catch (XQException e) {
 			e.printStackTrace();
 		} finally {
-			try{
-				if(rs != null){
+			try {
+				if (rs != null) {
 					rs.close();
 				}
-				if(pe != null){
-					pe.close();			
+				if (pe != null) {
+					pe.close();
 				}
-				if(con != null){
+				if (con != null) {
 					con.close();
 				}
-			}catch(XQException e){}
+			} catch (XQException e) {
+			}
 		}
 		return result;
 	}
-	
 
 }

@@ -33,10 +33,10 @@ public class MainWindow extends javax.swing.JFrame {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		tabPanel = new JTabbedPane();
-		clPanel = new ClasificacionPanel(da);
+		
 		edPanel = new EdicionPanel(da);
 		
-		clPanel.setPreferredSize(new Dimension(300,550));
+		
 		
 		tabPanel.add("Informacion", edPanel);
 		tabPanel.add("Clasificacion", clPanel);
@@ -51,15 +51,23 @@ public class MainWindow extends javax.swing.JFrame {
 		}
 		
 		anyoCombo = new JComboBox<Integer>(anyos);
-		anyoCombo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Integer anyo = anyoCombo.getSelectedIndex();
+		anyoCombo.addActionListener (new ActionListener() {
+			public void actionPerformed (ActionEvent arg0) {
+				Integer anyo = (Integer) anyoCombo.getSelectedItem();
 				if(anyo != null){
 					edPanel.updateData(anyo);
 					clPanel.updateData(anyo);
 				}
 			}
 		});
+		
+		edPanel.updateData((Integer) anyoCombo.getSelectedItem());
+		
+		clPanel = new ClasificacionPanel(da, (Integer) anyoCombo.getSelectedItem());
+		clPanel.updateData((Integer) anyoCombo.getSelectedItem());
+		
+		
+		clPanel.setPreferredSize(new Dimension(300,550));
 		
 		this.add(tabPanel,BorderLayout.CENTER);
 		this.add(anyoCombo,BorderLayout.NORTH);

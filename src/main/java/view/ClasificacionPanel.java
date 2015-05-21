@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import model.Clasificacion;
 import model.DataAccessor;
 
-public class ClasificacionPanel extends JPanel{
+public class ClasificacionPanel extends JPanel {
 
 	/**
 	 * 
@@ -24,13 +24,11 @@ public class ClasificacionPanel extends JPanel{
 	private DataAccessor da;
 	
 	
-	public ClasificacionPanel(DataAccessor da) {
+	public ClasificacionPanel(DataAccessor da, int anno) {
 		this.da = da;
-		
-		tbm = new DefaultTableModel(new String[] 
+		tbm = new DefaultTableModel(new String[]
 				{ "#", "Pais", "Artista" , "Cancion", "Puntos"}, 15);
 		tClasif = new JTable(tbm) {
-
 			private static final long serialVersionUID = 1L;
 
 			public boolean isCellEditable(int row, int column) {
@@ -39,6 +37,7 @@ public class ClasificacionPanel extends JPanel{
 		};
 		scroll = new JScrollPane(tClasif);
 		scroll.setViewportView(tClasif);
+		updateData(anno);
 	}
 
 	public void updateData(Integer anyo) {
@@ -53,7 +52,7 @@ public class ClasificacionPanel extends JPanel{
 		corresponden a el resultado
 		*/
 		if(modelSize > clSize){
-			for(int j = modelSize;j>clSize;j--){
+			for(int j=modelSize-1; j>clSize; j--){
 				tbm.setValueAt("", j, 0);
 				tbm.setValueAt("", j, 1);
 				tbm.setValueAt("", j, 2);
@@ -61,7 +60,6 @@ public class ClasificacionPanel extends JPanel{
 				tbm.setValueAt("", j, 4);
 			}
 		}
-		
 		for(Clasificacion c : clasifData){
 			tbm.setValueAt(c.getPuesto(), row, 0);
 			tbm.setValueAt(c.getPais(), row, 1);
