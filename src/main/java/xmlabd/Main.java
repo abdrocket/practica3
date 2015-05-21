@@ -9,7 +9,14 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DataAccessor da = new DataAccessor();
-		System.out.println(da.query2(2008));
+		ArrayList<String[]> l = da.query2(2008);
+		for(String[] s : l){
+			for(String cad : s){
+				System.out.print(cad);
+			}
+			System.out.println();
+		}
+		
 	}
 
 }

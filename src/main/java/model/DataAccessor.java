@@ -74,9 +74,14 @@ public class DataAccessor {
 		return l;
 	}
 
-	public ArrayList<Object[]> query2(int anno) {
-		ArrayList<Object[]> l = new ArrayList<Object[]>();
-		InputStream is = getClass().getResourceAsStream("src/main/resources/Eurovision2.xquery");
+	public ArrayList<String[]> query2(int anno) {
+		ArrayList<String[]> l = new ArrayList<String[]>();
+		String source = new String("/Eurovision2.xquery");
+		
+		InputStream is = this.getClass().getResourceAsStream(source);
+		//System.out.println(is);
+		
+		
 		XQConnection con = null;
 		XQResultSequence rs = null;
 		XQPreparedExpression pe = null;
@@ -89,11 +94,9 @@ public class DataAccessor {
 			int i = 1;
 			while (rs.next()) {
 				e = (Element) rs.getObject();
-				l.add(new Object[]{i++,
-						e.getAttribute("pais"),
-						e.getAttribute("artista"),
-						e.getAttribute("cancion"),
-						e.getAttribute("puntos")});
+				String[] s = {String.valueOf(i) , e.getAttribute("pais"),e.getAttribute("cancion"),e.getAttribute("artista"),e.getAttribute("puntos")};
+				l.add(s);
+				i++;
 			}
 		} catch (XQException e) {
 			// TODO Auto-generated catch block
@@ -114,19 +117,27 @@ public class DataAccessor {
 		return l;
 	}
 
-	public String query3() {
-		String s = new String();
-		InputStream is = getClass().getResourceAsStream("../resources/Eurovision1.xquery");
-		ArrayList<Integer> l = new ArrayList<Integer>();
+	public ArrayList<Element> query3(int anno) {
+		ArrayList<Element> l = new ArrayList<Element>();
+		String source = new String("/Eurovision3.xquery");
+		
+		InputStream is = this.getClass().getResourceAsStream(source);
+		//System.out.println(is);
+		
+		
 		XQConnection con = null;
 		XQResultSequence rs = null;
-		XQPreparedExpression pe = null;;
+		XQPreparedExpression pe = null;
 		try {
 			con = this.xqs.getConnection();
 			pe = con.prepareExpression(is);
+			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
+			Element e;
+			int i = 1;
 			while (rs.next()) {
-				l.add(Integer.parseInt(rs.getItemAsString(null)));
+				e = (Element) rs.getObject();
+				l.add(e);
 			}
 		} catch (XQException e) {
 			// TODO Auto-generated catch block
@@ -144,7 +155,7 @@ public class DataAccessor {
 				}
 			}catch(XQException e){}
 		}
-		return s;
+		return l;
 	}
 	
 
