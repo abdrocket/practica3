@@ -31,15 +31,12 @@ public class MainWindow extends javax.swing.JFrame {
 		this.setLayout(new BorderLayout());
 		this.setBounds(300, 300, 600, 600);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setSize(700, 400);
 		
 		tabPanel = new JTabbedPane();
-		
 		edPanel = new EdicionPanel(da);
 		
-		
-		
 		tabPanel.add("Informacion", edPanel);
-		tabPanel.add("Clasificacion", clPanel);
 		
 		ArrayList<Integer> lAnyos = this.da.XQuery1();
 		Integer[] anyos = new Integer[lAnyos.size()];
@@ -68,6 +65,7 @@ public class MainWindow extends javax.swing.JFrame {
 		
 		
 		clPanel.setPreferredSize(new Dimension(300,550));
+		tabPanel.add("Resultados", clPanel);
 		
 		this.add(tabPanel,BorderLayout.CENTER);
 		this.add(anyoCombo,BorderLayout.NORTH);

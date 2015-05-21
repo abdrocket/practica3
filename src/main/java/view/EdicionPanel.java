@@ -25,6 +25,7 @@ public class EdicionPanel extends JPanel{
 
 	public void updateData(Integer anyo) {
 		String html = da.XQuery3(anyo);
+		System.out.println(html);
 		tHtml.setText(html);
 	}
 

@@ -6,8 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintStream;
-import java.io.StreamTokenizer;
 import java.util.ArrayList;
 
 import javax.xml.namespace.QName;
@@ -96,12 +94,6 @@ public class DataAccessor {
 			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
 
-			/*
-			 * metodo caÑero que nos devuelve el html como cuando ejecutamos
-			 * estas mismas xquerys en eXide
-			 */
-			// rs.writeSequence(System.out, null);
-
 			Element e;
 			int i = 1;
 			while (rs.next()) {
@@ -133,7 +125,6 @@ public class DataAccessor {
 	}
 
 	public String XQuery3(int anno) {
-		// ArrayList<String[]> l = new ArrayList<String[]>();
 		String source = new String("/Eurovision3.xquery");
 		String result = "";
 		InputStream is = this.getClass().getResourceAsStream(source);
@@ -150,7 +141,7 @@ public class DataAccessor {
 			while (rs.next()) {
 				OutputStream os = null;
 				String s;
-				rs.writeSequence(System.out, null);
+				//rs.writeSequence(System.out, null);
 
 				
 			}

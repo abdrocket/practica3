@@ -1,6 +1,8 @@
 package view;
 
+import java.awt.BorderLayout;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -37,6 +39,7 @@ public class ClasificacionPanel extends JPanel {
 		};
 		scroll = new JScrollPane(tClasif);
 		scroll.setViewportView(tClasif);
+		this.add(scroll, BorderLayout.CENTER);
 		updateData(anno);
 	}
 
@@ -45,29 +48,45 @@ public class ClasificacionPanel extends JPanel {
 		int row = 0;
 		int modelSize = tbm.getRowCount();
 		int clSize = clasifData.size();
-		
 		/*
 		En caso de que el resultado de la query sea de menor tamaño 
 		que lo que ya hay se eliminan las filas sobrantes que no 
 		corresponden a el resultado
 		*/
-		if(modelSize > clSize){
-			for(int j=modelSize-1; j>clSize; j--){
+		tbm.getDataVector().removeAllElements();
+		/*if(modelSize > clSize){
+			System.out.println("vacios");
+			Vector<String> rowData = new Vector<String>();
+			for(int j=modelSize-1; j>clSize; j--){*/
+				/*
 				tbm.setValueAt("", j, 0);
 				tbm.setValueAt("", j, 1);
 				tbm.setValueAt("", j, 2);
 				tbm.setValueAt("", j, 3);
 				tbm.setValueAt("", j, 4);
+				*/
+		/*		rowData.add("");
+				rowData.add("");
+				tbm.addRow(rowData);
 			}
-		}
+		}*/
 		for(Clasificacion c : clasifData){
+			Vector<String> rowData = new Vector<String>();
+			rowData.add(String.valueOf( c.getPuesto() ) );
+			rowData.add(c.getPais());
+			rowData.add(c.getArtista());
+			rowData.add(c.getCancion());
+			rowData.add(String.valueOf( c.getPuntos() ) );
+			
+			tbm.addRow(rowData);
+			/*
 			tbm.setValueAt(c.getPuesto(), row, 0);
 			tbm.setValueAt(c.getPais(), row, 1);
 			tbm.setValueAt(c.getArtista(), row, 2);
 			tbm.setValueAt(c.getCancion(), row, 3);
 			tbm.setValueAt(c.getPuntos(), row, 4);
-	
 			row++;
+			 */
 		}
 		
 	}
