@@ -27,6 +27,7 @@ public class MainWindow extends javax.swing.JFrame {
 	private JComboBox<Integer> anyoCombo;
 	
 	public MainWindow(DataAccessor da){
+		super("Eurovision");
 		this.da = da;
 		this.setLayout(new BorderLayout());
 		this.setBounds(300, 300, 600, 600);

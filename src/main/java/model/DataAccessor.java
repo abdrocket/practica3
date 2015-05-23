@@ -124,9 +124,10 @@ public class DataAccessor {
 		return l;
 	}
 
-	public String XQuery3(int anno) {
+	public Edicion XQuery3(int anno) {
+		Edicion ed = null;//No inicializada hasta mas tarde, peligro
+		
 		String source = new String("/Eurovision3.xquery");
-		String result = "";
 		InputStream is = this.getClass().getResourceAsStream(source);
 
 		XQConnection con = null;
@@ -137,13 +138,12 @@ public class DataAccessor {
 			pe = con.prepareExpression(is);
 			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
-
+			Element e;
 			while (rs.next()) {
-				OutputStream os = null;
-				String s;
-				//rs.writeSequence(System.out, null);
-
-				
+				e = (Element) rs.getObject();
+				//ed = new Edicion(e.getElementsByTagName("body"));
+				ed = new Edicion( e.getTextContent() );
+				System.out.println(ed);
 			}
 		} catch (XQException e) {
 			e.printStackTrace();
@@ -161,7 +161,7 @@ public class DataAccessor {
 			} catch (XQException e) {
 			}
 		}
-		return result;
+		return ed;
 	}
 
 }

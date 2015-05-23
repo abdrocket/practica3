@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
 import model.DataAccessor;
+import model.Edicion;
 
 public class EdicionPanel extends JPanel{
 	/**
@@ -21,12 +22,14 @@ public class EdicionPanel extends JPanel{
 		tHtml = new JTextPane();
 		tHtml.setEditable(false);
 		tHtml.setContentType("text/html");
+		this.add(this.tHtml);
+		
 	}
 
 	public void updateData(Integer anyo) {
-		String html = da.XQuery3(anyo);
-		System.out.println(html);
-		tHtml.setText(html);
+		Edicion ed = da.XQuery3(anyo);
+		//System.out.println(html);
+		tHtml.setText(ed.toString());
 	}
 
 }
