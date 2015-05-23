@@ -2,9 +2,9 @@
     <artista cod-artista="a0001" nombre="Rodolfo Chikilicuatre" descripcion="Freak" url-img="/home/cosa.jpg"/>
     <artista cod-artista="a0002" nombre="Tipo random de Finlandia" descripcion="Freak satanico del norte" url-img=""/>
     <artista cod-artista="a0003" nombre="Bertin Osborne" descripcion="Latin lover"/>
-    <artista cod-artista="a0004" nombre="Peter Pan" descripcion="No quiere crecer"/>
+    <artista cod-artista="a0004" nombre="Peter Pan" descripcion=""/>
     <artista cod-artista="a0005" nombre="Princesa Chicle" descripcion="Muy dulce"/>
-    <artista cod-artista="a0006" nombre="Rey Hielo" descripcion="No quiere crecer"/>
+    <artista cod-artista="a0006" nombre="Rey Hielo" descripcion=""/>
     <artista cod-artista="a0007" nombre="Princesa bultos" descripcion="Que te bulten!"/>
     <artista cod-artista="a0008" nombre="Princesa Llama" descripcion="Paaaaaaaso, que voy ardiendoooo"/>
     <artista cod-artista="a0009" nombre="Asuranceturix" descripcion="Voz de ruiseñor"/>

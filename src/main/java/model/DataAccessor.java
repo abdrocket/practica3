@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 
 import javax.xml.namespace.QName;
@@ -124,26 +123,22 @@ public class DataAccessor {
 		return l;
 	}
 
-	public Edicion XQuery3(int anno) {
-		Edicion ed = null;//No inicializada hasta mas tarde, peligro
-		
+	public String XQuery3(int anno) {
+		String ed = "";
 		String source = new String("/Eurovision3.xquery");
 		InputStream is = this.getClass().getResourceAsStream(source);
 
 		XQConnection con = null;
 		XQPreparedExpression pe = null;
 		XQResultSequence rs = null;
+
 		try {
 			con = this.xqs.getConnection();
 			pe = con.prepareExpression(is);
 			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
-			Element e;
 			while (rs.next()) {
-				e = (Element) rs.getObject();
-				//ed = new Edicion(e.getElementsByTagName("body"));
-				ed = new Edicion( e.getTextContent() );
-				System.out.println(ed);
+				ed = rs.getSequenceAsString(null);
 			}
 		} catch (XQException e) {
 			e.printStackTrace();
@@ -158,8 +153,7 @@ public class DataAccessor {
 				if (con != null) {
 					con.close();
 				}
-			} catch (XQException e) {
-			}
+			} catch (XQException e) { }
 		}
 		return ed;
 	}
