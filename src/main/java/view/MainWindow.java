@@ -2,6 +2,7 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -30,12 +31,12 @@ public class MainWindow extends javax.swing.JFrame {
 		super("Eurovision");
 		this.da = da;
 		this.setLayout(new BorderLayout());
-		this.setBounds(300, 300, 600, 600);
+		//this.setBounds(300, 300, 600, 600);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setSize(700, 400);
+		//this.setSize(700, 400);
 		
 		tabPanel = new JTabbedPane();
-		edPanel = new EdicionPanel(da);
+		edPanel = new EdicionPanel(da, new Dimension(this.getSize()));
 		
 		tabPanel.add("Informacion", edPanel);
 		
@@ -61,11 +62,9 @@ public class MainWindow extends javax.swing.JFrame {
 		
 		edPanel.updateData((Integer) anyoCombo.getSelectedItem());
 		
-		clPanel = new ClasificacionPanel(da, (Integer) anyoCombo.getSelectedItem());
+		clPanel = new ClasificacionPanel(da, (Integer) anyoCombo.getSelectedItem(),  new Dimension(this.getSize() ) );
 		clPanel.updateData((Integer) anyoCombo.getSelectedItem());
-		
-		
-		clPanel.setPreferredSize(new Dimension(300,550));
+
 		tabPanel.add("Resultados", clPanel);
 		
 		this.add(tabPanel,BorderLayout.CENTER);

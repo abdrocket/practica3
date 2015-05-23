@@ -31,7 +31,6 @@ public class DataAccessor {
 			xqs.setProperty("user", "admin");
 			xqs.setProperty("password", "eXist");
 		} catch (XQException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -39,6 +38,7 @@ public class DataAccessor {
 
 	public ArrayList<Integer> XQuery1() {
 		ArrayList<Integer> l = new ArrayList<Integer>();
+
 		XQConnection con = null;
 		XQResultSequence rs = null;
 		XQExpression pe = null;
@@ -81,7 +81,6 @@ public class DataAccessor {
 	public ArrayList<Clasificacion> XQuery2(int anno) {
 		ArrayList<Clasificacion> l = new ArrayList<Clasificacion>();
 		String source = new String("/Eurovision2.xquery");
-
 		InputStream is = this.getClass().getResourceAsStream(source);
 
 		XQConnection con = null;
@@ -104,7 +103,6 @@ public class DataAccessor {
 				i++;
 			}
 		} catch (XQException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
@@ -125,13 +123,12 @@ public class DataAccessor {
 
 	public String XQuery3(int anno) {
 		String ed = "";
-		String source = new String("/Eurovision3.xquery");
+		String source = "/Eurovision3.xquery";
 		InputStream is = this.getClass().getResourceAsStream(source);
-
+		
 		XQConnection con = null;
 		XQPreparedExpression pe = null;
 		XQResultSequence rs = null;
-
 		try {
 			con = this.xqs.getConnection();
 			pe = con.prepareExpression(is);
@@ -157,5 +154,4 @@ public class DataAccessor {
 		}
 		return ed;
 	}
-
 }

@@ -1,5 +1,8 @@
 package view;
 
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 
@@ -14,11 +17,12 @@ public class EdicionPanel extends JPanel{
 	private DataAccessor da;
 	private JTextPane tHtml;
 	
-	public EdicionPanel(DataAccessor da) {
+	public EdicionPanel(DataAccessor da, Dimension d) {
 		this.da = da;
 		tHtml = new JTextPane();
 		tHtml.setEditable(false);
 		tHtml.setContentType("text/html");
+		this.tHtml.setPreferredSize(d);
 		this.add(this.tHtml);
 	}
 
