@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import javax.xml.namespace.QName;
@@ -56,8 +57,8 @@ public class DataAccessor {
 			while (rs.next()) {
 				l.add(Integer.parseInt(rs.getItemAsString(null)));
 			}
+			rs.close();
 		} catch (XQException | IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
@@ -102,6 +103,7 @@ public class DataAccessor {
 				l.add(c);
 				i++;
 			}
+			rs.close();
 		} catch (XQException e) {
 			e.printStackTrace();
 		} finally {
@@ -124,19 +126,20 @@ public class DataAccessor {
 	public String XQuery3(int anno) {
 		String ed = "";
 		String source = "/Eurovision3.xquery";
-		InputStream is = this.getClass().getResourceAsStream(source);
+		InputStream is = getClass().getResourceAsStream(source);
 		
 		XQConnection con = null;
 		XQPreparedExpression pe = null;
 		XQResultSequence rs = null;
 		try {
 			con = this.xqs.getConnection();
-			pe = con.prepareExpression(is);
+			pe = con.prepareExpression(new InputStreamReader(is));
 			pe.bindInt(new QName("anyo"), anno, null);
 			rs = pe.executeQuery();
 			while (rs.next()) {
-				ed = rs.getSequenceAsString(null);
+				ed += rs.getItemAsString(null);
 			}
+			rs.close();
 		} catch (XQException e) {
 			e.printStackTrace();
 		} finally {

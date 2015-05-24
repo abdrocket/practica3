@@ -36,7 +36,8 @@ public class MainWindow extends javax.swing.JFrame {
 		//this.setSize(700, 400);
 		
 		tabPanel = new JTabbedPane();
-		edPanel = new EdicionPanel(da, new Dimension(this.getSize()));
+		//edPanel = new EdicionPanel(da, new Dimension(this.getSize()));
+		edPanel = new EdicionPanel(da);
 		
 		tabPanel.add("Informacion", edPanel);
 		

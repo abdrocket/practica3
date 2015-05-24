@@ -1,7 +1,7 @@
 package view;
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+//import java.awt.Dimension;
+//import java.awt.FlowLayout;
 
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
@@ -17,17 +17,28 @@ public class EdicionPanel extends JPanel{
 	private DataAccessor da;
 	private JTextPane tHtml;
 	
-	public EdicionPanel(DataAccessor da, Dimension d) {
+	//public EdicionPanel(DataAccessor da, Dimension d) {
+	public EdicionPanel(DataAccessor da) {
 		this.da = da;
 		tHtml = new JTextPane();
 		tHtml.setEditable(false);
 		tHtml.setContentType("text/html");
-		this.tHtml.setPreferredSize(d);
+		//this.tHtml.setPreferredSize(d);
 		this.add(this.tHtml);
 	}
 
 	public void updateData(Integer anyo) {
 		String ed = da.XQuery3(anyo);
+		//imagenes?
+		String[] aux = ed.split(System.lineSeparator());
+		for(int i=0; i<aux.length; i++){
+			if(aux[i].contains("img")){
+				String s = aux[i];
+				System.out.println("hola");
+			}
+		}
+		ed = String.join(System.lineSeparator(), aux);
+		System.out.println(ed);
 		tHtml.setText(ed);
 	}
 

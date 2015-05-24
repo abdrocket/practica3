@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/EurovisionXMLSchema" xmlns:tns="http://www.example.org/EurovisionXMLSchema" elementFormDefault="qualified">
+
+
+
+
+    
+    <element name="edicion" type="string"></element>
+
+    <complexType name="artista"></complexType>
+
+    <complexType name="edicion"></complexType>
+
+    <complexType name="interprete-pais">
+    	<sequence maxOccurs="unbounded" minOccurs="0">
+    		<element name="voto" type="tns:voto"></element>
+    	</sequence>
+    	<attribute name="artista" type="string"></attribute>
+    	<attribute name="pais" type="string"></attribute>
+    	<attribute name="cancion" type="string"></attribute>
+    	<attribute name="orden" type="int"></attribute>
+    </complexType>
+
+    <complexType name="voto">
+    	<sequence>
+    		<element name="nota" type="int"></element>
+    	</sequence>
+    	<attribute name="emisor" type="string"></attribute>
+    </complexType>
+</schema>
