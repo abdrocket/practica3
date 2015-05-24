@@ -2,7 +2,6 @@ package view;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ public class MainWindow extends javax.swing.JFrame {
 		
 		ArrayList<Integer> lAnyos = this.da.XQuery1();
 		Integer[] anyos = new Integer[lAnyos.size()];
-		
+
 		int i = 0;
 		for(Integer a : lAnyos){
 			anyos[i] = a;
@@ -63,12 +62,19 @@ public class MainWindow extends javax.swing.JFrame {
 		});
 
 		tabPanel.add("Resultados", clPanel);
+		intiPanelData();
 		
 		this.add(tabPanel,BorderLayout.CENTER);
 		this.add(anyoCombo,BorderLayout.NORTH);
 		this.pack();
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
+	}
+	
+	private void intiPanelData(){
+		Integer anyo = (Integer) anyoCombo.getSelectedItem();
+		edPanel.updateData(anyo);
+		clPanel.updateData(anyo);
 	}
 
 }
