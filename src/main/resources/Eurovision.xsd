@@ -5,11 +5,25 @@
 
 
     
-    <element name="edicion" type="string"></element>
+    <element name="edicion" type="tns:edicion"></element>
+    
+    <complexType name="artista">
+    	<attribute name="cod-artista" type="string"></attribute>
+    	<attribute name="nombre" type="string"></attribute>
+    	<attribute name="descripcion" type="string"></attribute>
+    	<attribute name="url-img" type="string"></attribute>
+    </complexType>
 
-    <complexType name="artista"></complexType>
-
-    <complexType name="edicion"></complexType>
+    <complexType name="edicion">
+    	<sequence>
+    		<element name="interpretes-paises"
+    			type="tns:interprete-pais" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    	<attribute name="ciudad" type="string"></attribute>
+    	<attribute name="pais" type="string"></attribute>
+    	<attribute name="anno" type="int"></attribute>
+    </complexType>
 
     <complexType name="interprete-pais">
     	<sequence maxOccurs="unbounded" minOccurs="0">
@@ -22,9 +36,33 @@
     </complexType>
 
     <complexType name="voto">
-    	<sequence>
-    		<element name="nota" type="int"></element>
-    	</sequence>
     	<attribute name="emisor" type="string"></attribute>
+    	<attribute name="nota" type="int"></attribute>
     </complexType>
+
+    <attribute name="NewAttribute" type="string"></attribute>
+
+
+    <element name="artista" type="tns:artista"></element>
+
+    <element name="eurovision" type="tns:eurovision"></element>
+    
+
+    <complexType name="eurovision">
+
+    	<all>
+    		<sequence>
+    			<element name="artista" type="tns:artista" maxOccurs="unbounded" minOccurs="0"></element>
+    		</sequence>
+    		<sequence>
+    			<element name="edicion" type="tns:edicion"
+    				maxOccurs="unbounded" minOccurs="0">
+    			</element>
+    		</sequence>
+    	</all>
+    </complexType>
+
+    <element name="voto" type="tns:voto"></element>
+
+    <element name="interprete-pais" type="tns:interprete-pais"></element>
 </schema>
