@@ -31,13 +31,14 @@ public class MainWindow extends javax.swing.JFrame {
 		super("Eurovision");
 		this.da = da;
 		this.setLayout(new BorderLayout());
-		//this.setBounds(300, 300, 600, 600);
+		this.setBounds(500, 500, 700, 700);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		//this.setSize(700, 400);
-		
+	
+		Dimension prefSize = new Dimension (500,650);
 		tabPanel = new JTabbedPane();
-		//edPanel = new EdicionPanel(da, new Dimension(this.getSize()));
-		edPanel = new EdicionPanel(da);
+	
+		edPanel = new EdicionPanel(da,prefSize);
+		clPanel = new ClasificacionPanel(da,prefSize);
 		
 		tabPanel.add("Informacion", edPanel);
 		
@@ -60,11 +61,6 @@ public class MainWindow extends javax.swing.JFrame {
 				}
 			}
 		});
-		
-		edPanel.updateData((Integer) anyoCombo.getSelectedItem());
-		
-		clPanel = new ClasificacionPanel(da, (Integer) anyoCombo.getSelectedItem(),  new Dimension(this.getSize() ) );
-		clPanel.updateData((Integer) anyoCombo.getSelectedItem());
 
 		tabPanel.add("Resultados", clPanel);
 		

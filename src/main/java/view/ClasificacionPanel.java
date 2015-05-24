@@ -28,7 +28,7 @@ public class ClasificacionPanel extends JPanel {
 	
 	private DataAccessor da;
 	
-	public ClasificacionPanel(DataAccessor da, int anno, Dimension dimension) {
+	public ClasificacionPanel(DataAccessor da,Dimension prefSize) {
 		this.da = da;
 		tbm = new DefaultTableModel(new String[]
 				{ "#", "Pais", "Artista" , "Cancion", "Puntos"}, 15);
@@ -50,7 +50,7 @@ public class ClasificacionPanel extends JPanel {
 		tClasif.getColumnModel().getColumn(3).setCellRenderer(dtcr);
 		tClasif.getColumnModel().getColumn(4).setCellRenderer(dtcr);
 		
-		this.setSize(dimension);
+		this.setPreferredSize(prefSize);
 		this.add(scroll);
 	}
 
