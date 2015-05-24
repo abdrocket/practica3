@@ -1,5 +1,6 @@
+<!-- <eurovision xmlns="http://www.example.org/EurovisionXMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/EurovisionXMLSchema Eurovision.xsd "> -->
 <eurovision>
-    <artista cod-artista="a0001" nombre="Rodolfo Chikilicuatre" descripcion="Freak" url-img="E:/Bibliotecas/Imágenes/like_a_sir.jpg"/>
+    <artista cod-artista="a0001" nombre="Rodolfo Chikilicuatre" descripcion="Freak" url-img=""/>
     <artista cod-artista="a0002" nombre="Tipo random de Finlandia" descripcion="Freak satanico del norte" url-img=""/>
     <artista cod-artista="a0003" nombre="Bertin Osborne" descripcion="Latin lover"/>
     <artista cod-artista="a0004" nombre="Peter Pan" descripcion=""/>

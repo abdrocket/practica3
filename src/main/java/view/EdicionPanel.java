@@ -28,15 +28,6 @@ public class EdicionPanel extends JPanel{
 
 	public void updateData(Integer anyo) {
 		String ed = da.XQuery3(anyo);
-		//imagenes?//////////////////////////////////////
-		String[] aux = ed.split(System.lineSeparator());
-		for(int i=0; i<aux.length; i++){
-			if(aux[i].contains("img")){
-				String s = aux[i];
-			}
-		}
-		/////////////////////////////////////////////////
-		ed = String.join(System.lineSeparator(), aux);
 		tHtml.setText(ed);
 	}
 
